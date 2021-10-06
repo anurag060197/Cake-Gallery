@@ -1,0 +1,7 @@
+<h1>Cake List</h1>
+<div class="row">
+    <!-- <app-cake [cake]='cakes[0]'  class="col"></app-cake>
+    <app-cake [cake]='cakes[1]'  class="col"></app-cake> -->
+
+    <app-cake *ngFor="let cake of cakes" [cake]='cake' class="col"></app-cake>
+</div>
