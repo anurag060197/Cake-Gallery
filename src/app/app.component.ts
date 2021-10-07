@@ -6,8 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  title = 'angularapp1';
+  
   doSomething(){
     alert('child called');
   }
-  title = 'angularapp1';
+
+  attendToChild(){
+    console.log("...........................");
+    
+  }
 }

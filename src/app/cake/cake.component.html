@@ -1,4 +1,4 @@
-<div class="card" style="width: 20rem;">
+<div [routerLink]="['/cake', cake.cakeid]" class="card" style="width: 20rem;">
   <img [src]="cake.image" style="height: 18rem;;" class="card-img-top" alt="Cake image">
   <div class="card-body">
     <h5 class="card-title">{{cake.name}}</h5>

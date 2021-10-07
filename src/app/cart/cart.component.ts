@@ -1,4 +1,6 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit,EventEmitter, Output } from '@angular/core';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Component({
   selector: 'app-cart',
@@ -40,7 +42,28 @@ export class CartComponent implements OnInit {
     qty: 1
   }]
 
-  constructor() { }
+  removeItem(index: Number){
+    alert();
+    this.items.splice(index, 1);
+  }
+
+  constructor( private http: HttpClient, private loader: NgxUiLoaderService) {
+    this.loader.start();
+    var apiurl = "https://apifromashu.herokuapp.com/api/cakecart";
+    var rqstObj = {};
+    var headers = new HttpHeaders;
+    headers = headers.append("authtoken", localStorage.token);
+    this.http.post(apiurl, rqstObj, {headers: headers}).subscribe((response: any)=>{
+      console.log("Response from cart items ", response);
+      this.items = response.data;
+      this.loader.stop();
+    }, (err)=>{
+      this.loader.stop();
+      console.log('Error from cart itemss '+ err );
+      
+    })
+  }
+
 
   ngOnInit(): void {
   }

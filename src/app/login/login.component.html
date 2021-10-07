@@ -1,0 +1,24 @@
+<div style="width: 50%; margin: auto;">
+    <form>
+        <h1>Login Here</h1>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input name="email" [(ngModel)]="user.email" type="email" class="form-control" aria-describedby="emailHelp">
+        </div>
+        
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input name="password" [(ngModel)]="user.password" type="password" class="form-control" >
+        </div>
+        <div style="color: red;" *ngIf="loginError">
+          <label>{{loginError}}</label>
+        </div>
+        <div>
+          <a routerLink="/signup">New user? Signup here</a>
+          <a style="float: right;" routerLink="/forgot">Forgot Password</a>
+        </div>
+        <div class="mt-3">
+          <button (click)="login()" type="submit" class="btn btn-primary">Login</button>
+        </div>
+    </form>
+</div>
