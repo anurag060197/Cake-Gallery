@@ -19,6 +19,11 @@ import { ForgotComponent } from './forgot/forgot.component';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SearchComponent } from './search/search.component';
+import { SummaryComponent } from './summary/summary.component';
+import { PaymentComponent } from './payment/payment.component';
+import { AddressComponent } from './address/address.component';
+import { SuccessComponent } from './success/success.component';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -35,7 +40,12 @@ import { SearchComponent } from './search/search.component';
     CheckoutComponent,
     ForgotComponent,
     LoginComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SummaryComponent,
+    PaymentComponent,
+    AddressComponent,
+    SuccessComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
